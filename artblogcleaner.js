@@ -25,16 +25,16 @@ function cleandash(jnode) {
     // hide all posts from a blog that are not tagged "my art"
   	var blogs = ['blog1', 'blog2'];
   	if(badblog($(el).children('header').text(), blogs)){
-      if($(el).children().eq(3).text().indexOf('my art') < 0){
-      	$(el).children().eq(2).hide();
+      if($(el).children().eq(2).text().indexOf('my art') < 0){
+      	$(el).children().eq(1).hide();
       }
     }
   
     // hide all asks to a blogs
-	if($(el).children().eq(2).text().indexOf('asked:') >= 0){
+	if($(el).children().eq(1).text().indexOf('asked:') >= 0){
       var askblogs = ['blog1', 'blog2'];
       if(badblog($(el).children('header').text(), askblogs)){
-        $(el).children().eq(2).hide();
+        $(el).children().eq(1).hide();
       }
     }
 }
