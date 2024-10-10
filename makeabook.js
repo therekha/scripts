@@ -21,8 +21,8 @@ function createPageArrays(max) {
 
 function measurePage(page, margin = 10){
     const { width, height } = page.getSize();
-    const scalevar = (width/595.28 > height/841.89) ? width : height;
-    const scale = 420.9/(width + 2*margin);
+    const scalevar = (width/595.28 < height/841.89) ? width : height;
+    const scale = 420.9/(scalevar + 2*margin);
 
     const x = 595.28 - margin;
     const lefty = margin;
